@@ -1,0 +1,39 @@
+import React, { ReactNode } from "react";
+import { Navbar } from "@/components";
+
+interface LayoutDashboardProps {
+  children: ReactNode;
+}
+
+const LayoutDashboard: React.FC<LayoutDashboardProps> = ({ children }) => {
+  return (
+    <div className="flex min-h-full flex-col">
+      <Navbar />
+
+      {true ? (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">{children}</div>
+        </div>
+      ) : (
+        <div className="mx-auto w-full max-w-7xl grow lg:flex xl:px-2">
+          {/* Left sidebar & main wrapper */}
+          <div className="flex-1 xl:flex">
+            <div className="border-b border-gray-200 px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0 xl:border-b-0 xl:border-r xl:pl-6">
+              {/* Left column area */}
+            </div>
+
+            <div className="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
+              {/* Main area */}
+            </div>
+          </div>
+
+          <div className="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-96 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6">
+            {/* Right column area */}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default LayoutDashboard;

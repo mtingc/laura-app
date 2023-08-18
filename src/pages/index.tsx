@@ -1,9 +1,7 @@
-import { Button } from "@nextui-org/button";
+import { DashboardLayout } from "@/components";
 
-export default function Home() {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <Button>Click me</Button>
-    </div>
-  );
-}
+const Home = () => {
+  return <DashboardLayout>a</DashboardLayout>;
+};
+
+export default Home;
