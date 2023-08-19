@@ -2,18 +2,22 @@ import React, { ReactNode } from "react";
 import { Navbar } from "@/components";
 
 interface LayoutDashboardProps {
+  content?: "full" | "container";
   children: ReactNode;
 }
 
-const LayoutDashboard: React.FC<LayoutDashboardProps> = ({ children }) => {
+const LayoutDashboard: React.FC<LayoutDashboardProps> = ({
+  content = "full",
+  children,
+}) => {
   return (
     <div className="flex min-h-full flex-col">
       <Navbar />
 
-      {true ? (
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">{children}</div>
-        </div>
+      {content === "full" ? (
+        <div className="">{children}</div>
+      ) : content === "container" ? (
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
       ) : (
         <div className="mx-auto w-full max-w-7xl grow lg:flex xl:px-2">
           {/* Left sidebar & main wrapper */}
