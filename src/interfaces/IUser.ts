@@ -9,7 +9,8 @@ export interface IUser {
   phone: string;
   avatar: any; // File
   birthday: Date;
-  role: Role;
+  rol: Role;
+  type: Type;
   confirmed: boolean;
   blocked: boolean;
   created_at: Date;
@@ -25,4 +26,9 @@ export interface IAuth {
 enum Role {
   USER = "USER",
   ADMIN = "ADMIN",
+}
+
+enum Type {
+  STUDENT = "STUDENT",
+  TEACHER = "TEACHER",
 }

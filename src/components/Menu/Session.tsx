@@ -5,7 +5,12 @@ const Session = () => {
   const { data: session } = useSession();
   return (
     <>
-      <span>{session && session.user?.name}</span>
+      <div className="flex items-end flex-col text-gray-500">
+        <p className="text-sm font-medium">{session && session.user?.name}</p>
+        <p className="text-xs font-light">
+          {session && session.user?.type === "STUDENT" ? "Student" : "Teacher"}
+        </p>
+      </div>
       <Avatar
         isBordered
         color="success"

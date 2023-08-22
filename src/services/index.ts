@@ -1,3 +1,3 @@
-import { signIn, getUserData } from "./auth";
+import { signIn, getMe } from "./auth";
 
-export { signIn, getUserData };
+export { signIn, getMe };
